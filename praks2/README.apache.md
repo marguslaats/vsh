@@ -1,1 +1,5 @@
-KUMMIKARU OLEN MA JA LAHE KA
+# Praks 2 Ülesanne
+> Installeerida Apache2 veebiserver ja luua teistsugune esileht.
+# Käsud
+> apt-get install apache2 - installeerib apache2 veebiserveri virtuaalarvutisse.
+> nano /var/www/html/index.html 
