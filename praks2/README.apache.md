@@ -2,4 +2,4 @@
 > Installeerida Apache2 veebiserver ja luua teistsugune esileht.
 # Käsud
 > apt-get install apache2 - installeerib apache2 veebiserveri virtuaalarvutisse.
-> nano /var/www/html/index.html 
+> nano /var/www/html/index.html - saab muuta veebilehe kujundust täielikult oma meeldimise järgi. Seda tuleb teha HTML-i kasutades.
