@@ -4,4 +4,4 @@
 > Apt-get install php5 - instaleerib arvutisse php 5 utiliidid.
 > wget -q https://packages.sury.org/php/apt.gpg -O- | sudo apt-key add - installeerib php7 utiliidid virtuaalarvutisse.
 > wget https://repo.mysql.com//mysql-apt-config_0.8.9-1_all.deb
-dpkg -i mysql-apt-config_0.8.9-1_all.deb installeerib mysql 5.6 virtuaalarvutisse.
+apt-get install mysql-server installeerib mysql 5.6 virtuaalarvutisse.
