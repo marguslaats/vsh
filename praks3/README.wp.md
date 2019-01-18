@@ -5,3 +5,4 @@
 > wget -q https://packages.sury.org/php/apt.gpg -O- | sudo apt-key add - installeerib php7 utiliidid virtuaalarvutisse.
 > wget https://repo.mysql.com//mysql-apt-config_0.8.9-1_all.deb
 apt-get install mysql-server installeerib mysql 5.6 virtuaalarvutisse.
+apt install phpmyadmin - installeerib veebiliidese jaoks vajalikud utiliidid
