@@ -6,3 +6,4 @@
 > wget https://repo.mysql.com//mysql-apt-config_0.8.9-1_all.deb
 apt-get install mysql-server installeerib mysql 5.6 virtuaalarvutisse.
 apt install phpmyadmin - installeerib veebiliidese jaoks vajalikud utiliidid
+Kontrollimiseks läksin  lehele 172.23.13.48/index.php 
