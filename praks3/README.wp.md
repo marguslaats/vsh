@@ -7,3 +7,8 @@
 apt-get install mysql-server installeerib mysql 5.6 virtuaalarvutisse.
 apt install phpmyadmin - installeerib veebiliidese jaoks vajalikud utiliidid
 Kontrollimiseks läksin  lehele 172.23.13.48/index.php 
+
+#HTTPS protokolli kasutamiseks 
+> tuleks järgida õpetust, mis asub siin: https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-16-04
+> Järgnevas õpetuses on kõik lihtsalt ja selgelt lahti seletatud, ning antud õpetus töötab ka Ubuntu põhisel süsteemil
+> Selleks, et antud õpetus töötaks tuleb kustutada /etc/apache2/conf-available/ssl-params.conf fail, sest see ei ühildu debianiga
