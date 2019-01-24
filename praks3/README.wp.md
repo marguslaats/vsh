@@ -6,9 +6,38 @@
 > wget https://repo.mysql.com//mysql-apt-config_0.8.9-1_all.deb
 apt-get install mysql-server installeerib mysql 5.6 virtuaalarvutisse.
 apt install phpmyadmin - installeerib veebiliidese jaoks vajalikud utiliidid
-Kontrollimiseks läksin  lehele 172.23.13.48/index.php 
+Kontrollimiseks läksin  lehele 172.23.13.48/index.php
 
-#HTTPS protokolli kasutamiseks 
-> tuleks järgida õpetust, mis asub siin: https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-16-04
-> Järgnevas õpetuses on kõik lihtsalt ja selgelt lahti seletatud, ning antud õpetus töötab ka Ubuntu põhisel süsteemil
-> Selleks, et antud õpetus töötaks tuleb kustutada /etc/apache2/conf-available/ssl-params.conf fail, sest see ei ühildu debianiga
+# Käsud HTTPS protokolli kasutamiseks
+> openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt - See käsk loob SSL sertifikaadi.
+> cp /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf.bak - See käsk teeb default-ssl.conf failist tagavara koopia juhuks, kui seda peaks vaja minema.
+> nano /etc/apache2/sites-available/default-ssl.conf 
+> Fail peaks nägema lõpuks välja umbes selline: 
+<IfModule mod_ssl.c>
+        <VirtualHost _default_:443>
+                ServerAdmin your_email@example.com
+                ServerName server_domain_or_IP
+
+                DocumentRoot /var/www/html
+
+                ErrorLog ${APACHE_LOG_DIR}/error.log
+                CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+                SSLEngine on
+
+                SSLCertificateFile      /etc/ssl/certs/apache-selfsigned.crt
+                SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
+
+                <FilesMatch "\.(cgi|shtml|phtml|php)$">
+                                SSLOptions +StdEnvVars
+                </FilesMatch>
+                <Directory /usr/lib/cgi-bin>
+                                SSLOptions +StdEnvVars
+                </Directory>
+
+                BrowserMatch "MSIE [2-6]" \
+                               nokeepalive ssl-unclean-shutdown \
+                               downgrade-1.0 force-response-1.0
+
+        </VirtualHost>
+</IfModule>
