@@ -10,10 +10,16 @@ Kontrollimiseks läksin  lehele 172.23.13.48/index.php
 
 # Käsud HTTPS protokolli kasutamiseks
 > openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt - See käsk loob SSL sertifikaadi.
-> cp /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf.bak - See käsk teeb default-ssl.conf failist tagavara koopia juhuks, kui seda peaks vaja minema.
-> nano /etc/apache2/sites-available/default-ssl.conf 
-> Fail peaks nägema lõpuks välja umbes selline: 
-<IfModule mod_ssl.c>
+
+Cp /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf.bak - See käsk teeb default-ssl.conf failist tagavara koopia juhuks, kui seda peaks vaja minema.
+
+
+nano /etc/apache2/sites-available/default-ssl.conf 
+
+
+Fail peaks nägema lõpuks välja umbes selline: 
+
+><IfModule mod_ssl.c>
         <VirtualHost _default_:443>
                 ServerAdmin your_email@example.com
                 ServerName server_domain_or_IP
