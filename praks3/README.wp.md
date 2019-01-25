@@ -104,3 +104,22 @@ FLUSH PRIVILEGES;
 MySql-ist lahkumiseks
 
 exit;
+
+# Wordpress veebilehe seadistamine nii, et database oleks teises arvutis.
+
+Tuleb installeerida wordpress eelnevalt loetletud käskude järgi, kuid database osa ei ole mõtet teha. 
+
+Database:
+mysql -u root -p
+
+CREATE DATABASE wordpress;
+
+CREATE USER user@[veebiserveri ip] IDENTIFIED BY 'qwerty';
+
+GRANT ALL PRIVILEGES ON wordpress.* TO user@[veebiserveri ip];
+
+FLUSH PRIVILEGES;
+
+MySql-ist lahkumiseks
+
+exit;
