@@ -123,3 +123,13 @@ FLUSH PRIVILEGES;
 MySql-ist lahkumiseks
 
 exit;
+
+
+# DokuWiki instaleerimine:
+
+Dokuwiki installeerismiseks kasutasin järgnevat õpetust: 
+https://www.dokuwiki.org/install:ubuntu Kuna õpetus on mõeldud originaalis ubuntu kasutajale, siis muutsin antud õpetust, et see toimiks ka debiani peal.
+
+# Kasutajasõbraliku URL-i kasutamine: 
+Selleks tegin /etc/hosts faili juurde järgneva kirje: 
+127.0.0.1 margus.leht.ee
